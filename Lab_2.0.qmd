@@ -24,6 +24,41 @@ library(dplyr)
 tree_dat <- read.csv("~/github/Lab 2/data/data1/data2.R1/tree_dat.csv")
 ```
 
+
+
+
+
+```{r}
+tree_dat1 <- read.csv("~/github/Lab 2/data/data1/data2.R1/tree_dat.csv")
+```
+
+```{r}
+#9
+library(dplyr)
+
+smallest_stand3 <- tree_dat %>%
+  select(treeID, stand, year, rad_ib) %>%
+  filter(stand == "3", year == 2007) %>%
+  slice_min(order_by = rad_ib, n = 3)
+
+smallest_stand3
+```
+
+```{r}
+tree_dat1 <- tree_dat1 %>%
+  rename(
+    rad_ib_mm = rad_ib,   
+    inc_mm = inc          
+  )
+
+
+glimpse(tree_dat1)
+
+```
+
+
+
+
 ```{r}
 #1
 library(dplyr)
